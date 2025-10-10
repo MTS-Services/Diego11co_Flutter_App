@@ -51,7 +51,7 @@ class CourseView extends GetView<CourseViewController> {
                     crossAxisCount: 2,
                     crossAxisSpacing: 5.w,
                     mainAxisSpacing: 5.h,
-                    childAspectRatio: 0.80,
+                    childAspectRatio: 0.70,
                   ),
                   itemCount: 4,
                   itemBuilder: (context, index) {

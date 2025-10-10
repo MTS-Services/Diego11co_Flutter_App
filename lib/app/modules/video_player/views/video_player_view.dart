@@ -4,6 +4,7 @@ import 'package:diego/app/modules/video_player/views/widget/custom_text.dart';
 import 'package:diego/app/modules/video_player/views/widget/class_item.dart';
 import 'package:diego/app/modules/video_player/views/widget/modul_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 import '../controllers/video_player_controller.dart';
@@ -21,9 +22,33 @@ class VideoPlayerView extends GetView<VideoPlayerControllerX> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Align(
-              alignment: Alignment.center,
-              child: Image.asset(AssetPath.appLogoPng),
+            Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: Row(
+                children: [
+                  InkWell(
+                    onTap: Get.back,
+                    borderRadius: BorderRadius.circular(50),
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.black.withOpacity(0.05),
+                      ),
+                      child: const Icon(
+                        Icons.arrow_back_ios_new,
+                        size: 18,
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10.w,),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Image.asset(AssetPath.appLogoPng),
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: 10),
             _buildVideo(controller),
@@ -82,6 +107,7 @@ class VideoPlayerView extends GetView<VideoPlayerControllerX> {
                       CourseModuleHeader(),
                       Expanded(
                         child: ListView.builder(
+                          shrinkWrap: true,
                           physics: const BouncingScrollPhysics(),
                           itemCount: 50,
                           itemBuilder: (context, index) {

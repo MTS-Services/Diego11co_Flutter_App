@@ -6,12 +6,12 @@ import 'package:get/get.dart';
 
 import '../controllers/login_controller.dart';
 
-
 class PasswordView extends GetView<LoginController> {
   PasswordView({super.key});
 
   bool isChecked = false;
-final TextEditingController passwordController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ final TextEditingController passwordController = TextEditingController();
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 80,),
+                SizedBox(height: 80),
                 Align(
                   alignment: Alignment.topLeft,
                   child: IconButton(
@@ -32,7 +32,7 @@ final TextEditingController passwordController = TextEditingController();
                     icon: Icon(Icons.arrow_back, color: Colors.black),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(height: 10),
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.r),
@@ -63,9 +63,7 @@ final TextEditingController passwordController = TextEditingController();
                             SizedBox(height: 15.h),
                             TextFormField(
                               controller: passwordController,
-                              decoration: InputDecoration(
-                                hintText: "Password",
-                              ),
+                              decoration: InputDecoration(hintText: "Password"),
                             ),
                             SizedBox(height: 25.h),
                             _buildSizedBoxButton(),
@@ -105,9 +103,13 @@ final TextEditingController passwordController = TextEditingController();
           side: const BorderSide(color: Colors.grey, width: 1),
           activeColor: Colors.blue,
         ),
-        Text(
-          'Acconsento al trattamento dei miei dati personali',
-          style: Theme.of(context).textTheme.bodySmall!.copyWith(fontSize: 15),
+        Flexible(
+          child: Text(
+            'Acconsento al trattamento dei miei dati personali',
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(fontSize: 15),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+          ),
         ),
       ],
     );

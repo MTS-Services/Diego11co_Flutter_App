@@ -34,6 +34,7 @@ class CourseProgressCard extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(8.w),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -69,7 +70,7 @@ class CourseProgressCard extends StatelessWidget {
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w600,
               ),
-              maxLines: 2,
+              maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 3.h),

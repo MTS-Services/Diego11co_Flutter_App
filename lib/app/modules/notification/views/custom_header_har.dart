@@ -38,14 +38,18 @@ class CustomHeaderBar extends StatelessWidget {
             ),
           ),
 
-          GestureDetector(
-            onTap: onTapText,
-            child: Text(
-              text,
-              style: TextStyle(
-                color:AppColors.primary,
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
+          Flexible(
+            child: GestureDetector(
+              onTap: onTapText,
+              child: Text(
+                text,
+                style: TextStyle(
+                  color:AppColors.primary,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18,
+                  overflow: TextOverflow.ellipsis
+                ),
+                maxLines: 1,
               ),
             ),
           ),

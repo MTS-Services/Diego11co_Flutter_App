@@ -23,7 +23,6 @@ class NotificationView extends GetView<NotificationController> {
               ),
 
               const SizedBox(height: 20),
-
               CustomHeaderBar(
                 text: 'Segna tutti come già letti',
                 onBack: () => Get.back(),
